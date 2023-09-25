@@ -1,0 +1,167 @@
+.benefit {
+  padding: 160px 0;
+  padding-bottom: 180px;
+  @include mobile {
+    padding: 80px 0;
+  }
+  @media (min-width: 1440px){
+    padding-top: 16rem;
+    padding-bottom: 18rem;
+  }
+  &__container {
+    padding-left: 113px;
+    padding-right: 113px;
+    text-align: center;
+    @include mobile {
+      padding: 0 16px;
+    }
+  }
+  &__heading {
+    margin-bottom: 32px;
+    p {
+      margin: 0;
+      color: var(--black-brand-color);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      span {
+        color: var(--focus-active-color);
+      }
+      @media (min-width: 1440px){
+        font-size: 1rem;
+      }
+    }
+  }
+  &__title-logo {
+    margin: 0;
+    margin-bottom: 8px;
+    color: var(--focus-active-color);
+    font-size: 4rem;
+  }
+  &__title {
+    margin-bottom: 48px;
+    @media (min-width: 1440px){
+      margin-bottom: 4.8rem;
+    }
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+    margin-bottom: 64px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+      margin-bottom: 32px;
+      padding: 0 5%;
+    }
+  }
+  &__btn {
+      &:not(:last-child) {
+        @include mobile {
+
+          margin-bottom: 16px;
+        }
+      }
+  }
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+    }
+  }
+  &__item {
+    flex: 1;
+    padding: 24px 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:not(:last-child) {
+      border-right: 1px solid rgba(37, 35, 33, 0.1);
+
+      @include mobile {
+        border-right: none;
+      }
+    }
+    &:nth-child(odd){
+      @include mobile {
+        border-right: 1px solid rgba(37, 35, 33, 0.1);
+      }
+    }
+    @include mobile {
+      padding: 24px 16px 40px;
+    }
+  }
+  &__text {
+    position: relative;
+    padding-top: 60px;
+    color: var(--black-brand-color);
+    text-align: center;
+    font-family: "PP Neue Montreal";
+    line-height: 160%;
+    letter-spacing: 0.32px;
+    max-width: 194px;
+    font-size: 16px;
+    @media (min-width: 1440px){
+      padding-top: 6rem;
+      max-width: 19.4rem;
+      font-size: 1.6rem;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 48px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      @media (min-width){
+        width: 4.8rem;
+        height: 4.8rem;
+      }
+    }
+    &--guarantee {
+      &::before {
+        background-size: 42px 42px;
+        background-image: url("./../img/guarantee-icon.svg");
+        @media (min-width : 1440px){
+         background-size: 4.2rem 4.2rem;
+        }
+      }
+    }
+    &--payment {
+      &::before {
+        background-size: 16px 14px;
+        background-image: url("./../img/payment-icon.svg");
+        @media (min-width : 1440px){
+          background-size: 1.6rem 1.4rem;
+         }
+      }
+    }
+    &--prod {
+      &::before {
+        background-size: 21px 21px;
+        background-image: url("./../img/prod-icon.svg");
+        @media (min-width : 1440px){
+          background-size: 2.1rem 2.1rem;
+         }
+      }
+    }
+    &--tech {
+      &::before {
+        background-size: 16px 16px;
+        background-image: url("./../img/tech-icon.svg");
+        @media (min-width : 1440px){
+          background-size: 1.6rem 1.6rem;
+         }
+      }
+    }
+  }
+}

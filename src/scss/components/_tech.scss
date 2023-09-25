@@ -1,0 +1,120 @@
+.tech {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  overflow: hidden;
+  // background-color: rgb(69, 111, 225)
+  @media (min-width: 1440px){
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  @include mobile {
+    padding-bottom: 160px;
+  }
+  &__title {
+    margin-bottom: 80px;
+  }
+  &__container {
+    padding: 160px 0;
+    @include mobile {
+      padding: 200px 0;
+    }
+  }
+  &__text {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+    @include mobile {
+      position: relative;
+    }
+    @include hover {
+      .tech__paragraph--right {
+        -webkit-text-fill-color: var(--focus-color);
+      }
+      .tech__paragraph--left {
+        -webkit-text-fill-color: var(--black-brand-color);
+      }
+    }
+  }
+  &__img {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 420px;
+    height: 240px;
+    opacity: 0;
+    transform: scale(0.4);
+    margin-top: -120px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    cursor: none;
+    pointer-events: none;
+    transition: transform .3s ease-in, opacity .3s ease-in;
+    @media (min-width: 1440px){
+      width: 42rem;
+      height: 24rem;
+      margin-top: -12rem;
+    }
+    @include mobile {
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      // top: 15%;
+      opacity: 1;
+      width: 340px;
+      height: 200px;
+      margin-top: 0;
+    }
+    &--1 {
+      background-image: url("./../img/text-pic-01.jpg");
+      transform: translateX(-50%) translateY(-93%);
+    }
+    &--2 {
+      background-image: url("./../img/text-pic-02.jpg");
+      top: 70%;
+    }
+    img {
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__paragraph {
+    flex-shrink: 0;
+    margin: 0;
+    display: block;
+    position: relative;
+    z-index: 2;
+    font-size: 180px;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--black-brand-color);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: transform ease;
+    &--right {
+      -webkit-text-stroke: 1px var(--focus-color);
+      @include mobile {
+        -webkit-text-fill-color: var(--focus-color)
+      }
+    }
+    &--left {
+      @include mobile {
+        -webkit-text-fill-color: var(--black-brand-color)
+      }
+    }
+    @include mobile {
+      font-size: 40px;
+    }
+    @media (min-width: 1440px){
+      font-size: 18rem;
+    }
+  }
+}

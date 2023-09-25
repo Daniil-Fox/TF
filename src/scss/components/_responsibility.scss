@@ -1,0 +1,147 @@
+.responsibility {
+  padding-top: 120px;
+  padding-bottom: 110px;
+  overflow: hidden;
+  @media (min-width: 1440px) {
+    padding-top: 12rem;
+    padding-bottom: 11rem;
+  }
+  @include mobile {
+    padding-top: 160px;
+    padding-bottom: 46px;
+  }
+  &__title {
+    margin: 0 auto;
+    margin-bottom: 80px;
+    max-width: 944px;
+    @media (min-width: 1440px) {
+      max-width: 94.4rem;
+    }
+  }
+  &__items {
+    overflow: visible;
+    // height: 360px;
+    & .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.progress {
+  transform: rotate(-90deg);
+  transform-origin: center;
+  filter: drop-shadow(0 0 2px var(--focus-color))
+    drop-shadow(0 0 5px var(--focus-color))
+    drop-shadow(0 0 10px var(--focus-color));
+  -webkit-filter: drop-shadow(0 0 2px var(--focus-color))
+    drop-shadow(0 0 5px var(--focus-color))
+    drop-shadow(0 0 10px var(--focus-color));
+}
+.progress-bg {
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+.res {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  max-width: 900px;
+  @media (min-width: 1440px) {
+    max-width: 90rem;
+  }
+  @include mobile {
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__left {
+    position: relative;
+    margin-right: 40px;
+
+    @media (min-width: 1440px) {
+      margin-right: 4rem;
+    }
+    @include mobile {
+      margin-right: 0;
+    }
+  }
+  &__title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__figure {
+    margin: 0;
+    color: var(--focus-color);
+    text-align: center;
+    font-family: "Aeonik Pro";
+    font-size: 120px;
+    font-weight: 400;
+    text-transform: uppercase;
+    @media (min-width: 1440px) {
+      font-size: 12rem;
+    }
+  }
+  &__info {
+    margin: 0;
+    color: var(--black-brand-color);
+    font-size: 40px;
+    font-weight: 400;
+    span {
+      display: block;
+      color: var(--focus-color);
+    }
+    @include mobile {
+      font-size: 20px;
+      padding: 32px 16px;
+      text-align: center;
+    }
+    @media (min-width: 1440px) {
+      font-size: 4rem;
+    }
+  }
+}
+.res-control-btn {
+  position: relative;
+  transform: translateX(50%);
+  padding: 0;
+}
+
+.circle-img {
+  width: 362px;
+  height: 362px;
+  overflow: visible;
+  @media (min-width: 1440px) {
+    width: 36.2rem;
+    height: 36.2rem;
+  }
+  @media (max-width: 375px) {
+    width: 320px;
+    height: 320px;
+  }
+}
+.progress,
+.progress-bg {
+  cx: 181px;
+  cy: 181px;
+  r: 174px;
+
+  @media (min-width: 1440px) {
+    cx: 18.1rem;
+    cy: 18.1rem;
+    r: 17.4rem;
+  }
+  @media (max-width: 375px) {
+    cx: 160px;
+    cy: 160px;
+    r: 152px;
+  }
+}

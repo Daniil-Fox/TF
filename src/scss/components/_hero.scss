@@ -1,0 +1,259 @@
+.hero {
+  position: relative;
+  --offset: -100px;
+  --finish-position: 0;
+  overflow-x: hidden;
+  .swiper-slide {
+    position: relative;
+
+  }
+  &__slide {
+    background-position-y: center;
+    background-position-x: left;
+    background-size: 110% 100%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-position-x 5s ease-in;
+    @include mobile {
+      background-size: auto 110%;
+      background-position: center;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(#000, 0.4);
+    }
+    &--nisalahti {
+      background-image: image-set( url("./../img/hero/hero1-3x.jpg") 3x, url("./../img/hero/hero1-2x.jpg") 2x);
+    }
+    &--lautala {
+      background-image: image-set( url("./../img/hero/hero2-3x.jpg") 3x, url("./../img/hero/hero2-2x.jpg") 2x);
+    }
+    &--vaskela {
+      background-image: image-set( url("./../img/hero/hero3-3x.jpg") 3x, url("./../img/hero/hero3-2x.jpg") 2x);
+    }
+    &--ostamo {
+      background-image: image-set( url("./../img/hero/hero4-3x.jpg") 3x, url("./../img/hero/hero4-2x.jpg") 2x);
+    }
+  }
+  &__btn-down {
+    width: 48px;
+    height: 96px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15px;
+    z-index: 5;
+    display: flex;
+    align-items: flex-end;
+    span {
+      display: block;
+      width: 100%;
+      border: 1px solid rgba(255, 150, 92, 0.6);
+      height: 50%;
+      position: relative;
+      transition: border-color 0.3s ease-in;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        height: 56px;
+        width: 10px;
+        background-image: url("./../img/arrow-down.svg");
+        background-position: bottom center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: height 0.3s ease-in, bottom 0.3s ease-in;
+        @media (min-width: 1440px){
+          height: 5.6rem;
+          width: 1rem;
+        }
+      }
+    }
+    @include mobile {
+      bottom: 5%;
+    }
+    @media (min-width: 1440px){
+      width: 4.8rem;
+      height: 9.6rem;
+    }
+    @include hover {
+      span {
+        border-color: var(--focus-active-color);
+        &::before {
+          height: 28px;
+          bottom: 25%;
+        }
+      }
+    }
+  }
+}
+
+.move-background {
+  animation: move-bg 7s linear 1;
+    transition: background-position-x .5s ease-in;
+  @include mobile {
+    animation: move-bg-mobile 7s linear 1;
+  }
+}
+@keyframes move-bg {
+  0% {
+    background-position-x: var(--offset);
+  }
+  100% {
+    background-position-x: left;
+  }
+}
+
+@keyframes move-bg-mobile {
+  0% {
+    background-position-x: calc(50% - 100px);
+  }
+  100% {
+    background-position-x: 50%;
+  }
+}
+.slide {
+  &__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__content {
+    margin-top: 90px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mobile {
+      margin-top: 0;
+    }
+  }
+  &__btn {
+    &--watch {
+      margin-right: 8px;
+    }
+
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__title {
+    margin: 0;
+    margin-bottom: 12px;
+    color: rgba(228, 228, 228, 0.8);
+    text-align: center;
+    text-overflow: ellipsis;
+    font-family: "PP Neue Montreal";
+    font-style: normal;
+    line-height: normal;
+    font-size: 115px;
+    font-weight: 700;
+    letter-spacing: 3.45px;
+    @media (min-width: 1440px){
+      font-size: 11.5rem;
+    }
+
+    @include mobile {
+      font-size: 48px;
+      margin-bottom: 32px;
+    }
+  }
+  &__refers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+  }
+  &__item {
+    display: inline-block;
+    padding: 12px;
+    padding-left: 40px;
+    padding-right: 0;
+    margin: 0 32px;
+    position: relative;
+    color: rgba(#e4e4e4, 0.8);
+    font-family: "PP Neue Montreal";
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.44px;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in;
+    @media (min-width: 1440px){
+      font-size: 1.2rem;
+      padding: 1.2rem;
+      padding-left: 4rem;
+    }
+    @include mobile {
+      margin: 0;
+    }
+    &:not(:last-child){
+      @include mobile {
+        margin: 8px 0;
+      }
+    }
+    &-separator {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white-color);
+      font-size: 10px;
+      @media (min-width: 1440px){
+        font-size: 1rem;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      @media (min-width: 1440px){
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+    &--video {
+      &::before {
+        background-image: url("./../img/play-icon.svg");
+      }
+    }
+    &--tour {
+      &::before {
+        background-image: url("./../img/tour-icon.svg");
+      }
+    }
+    &--gallery {
+      &::before {
+        background-image: url("./../img/gallery-icon.svg");
+      }
+    }
+    @include hover {
+      color: var(--white-color);
+    }
+  }
+}

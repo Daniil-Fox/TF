@@ -1,0 +1,71 @@
+.office {
+  padding-top: 120px;
+  padding-bottom: 160px;
+  overflow: hidden;
+  @include mobile {
+    padding-bottom: 53px;
+  }
+  &__title {
+    margin-bottom: 60px;
+    font-family: "Aeonik Pro";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @media (min-width: 1440px) {
+      margin-bottom: 6rem;
+      font-size: 2.4rem;
+    }
+    @include mobile {
+      margin-bottom: 54px;
+    }
+  }
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 80px;
+    @media (min-width: 1440px) {
+      margin-bottom: 8rem;
+    }
+  }
+
+  &__address {
+    max-width: 210px;
+    margin-bottom: 64px;
+
+    @media (min-width: 1440px) {
+      max-width: 21rem;
+      margin-bottom: 6.4rem;
+    }
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+  &__slider {
+  }
+  &__img {
+    position: relative;
+    width: 593px;
+    height: 360px;
+    @media (min-width: 1440px){
+      width: 59.3rem;
+      height: 36rem;
+    }
+    @include mobile {
+      width: 264px;
+      height: 160px;
+    }
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .swiper-slide {
+    cursor: grab;
+  }
+}

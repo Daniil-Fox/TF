@@ -1,0 +1,40 @@
+// @include font-face("Muller", "../fonts/MullerRegular", 400, normal);
+@include font-face("Aeonik Pro", "./../fonts/Aeonik-Pro-Bold", 700, normal);
+@include font-face(
+  "Aeonik Pro",
+  "./../fonts/Aeonik-Pro-Regular-Italic",
+  400,
+  italic
+);
+@include font-face(
+  "Aeonik Pro TRIAL",
+  "./../fonts/AeonikProTRIAL-Bold",
+  700,
+  normal
+);
+
+@include font-face(
+  "PP Telegraf",
+  "./../fonts/PPTelegraf-UltraBold",
+  800,
+  normal
+);
+
+@include font-face(
+  "PP Neue Montreal",
+  "../fonts/PPNeueMontrealBold",
+  700,
+  normal
+);
+@include font-face(
+  "PP Neue Montreal",
+  "../fonts/PPNeueMontrealRegular",
+  400,
+  normal
+);
+@include font-face(
+  "PP Neue Montreal",
+  "../fonts/PPNeueMontrealMedium",
+  500,
+  normal
+);
